@@ -5,19 +5,74 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink
+          to="/"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isPending ? "red" : "",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/addBook">Add Book</NavLink>
+        <NavLink
+          to="/addBook"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isPending ? "red" : "",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          Add Book
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/allBooks">All Books</NavLink>
+        <NavLink
+          to="/allBooks"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isPending ? "red" : "",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          All Books
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/borrowed">Borrowed</NavLink>
+        <NavLink
+          to="/borrowed"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isPending ? "red" : "",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          Borrowed
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/login">Login</NavLink>
+        <NavLink
+          to="/login"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isPending ? "red" : "",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          Login
+        </NavLink>
       </li>
     </>
   );
@@ -50,7 +105,7 @@ const Navbar = () => {
                 </svg>
               </label>
             </div>
-            <div className="">Navbar Title</div>
+            <div className="">Shelf2Borrow</div>
 
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal">
