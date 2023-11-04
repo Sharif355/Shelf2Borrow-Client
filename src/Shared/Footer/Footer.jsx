@@ -3,11 +3,13 @@ const Footer = () => {
     <div>
       <footer className="footer lg:p-10 bg-base-200 text-base-content">
         <nav>
-          <header className="footer-title">Services</header>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <img
+            className="w-60 "
+            src="https://i.ibb.co/H4cPk8b/final-Copy.png"
+            alt=""
+          />
+          <p>Shelf2Borrow Pvt.Ltd, Reliable Since 2000.</p>
+          <p>All right reserved to &copy;Shelf2Borrow.</p>
         </nav>
         <nav>
           <header className="footer-title">Company</header>

@@ -83,7 +83,7 @@ const Navbar = () => {
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
-          <div className="flex justify-between navbar bg-base-300">
+          <div className="flex justify-between navbar ">
             <div className="flex-none lg:hidden">
               <label
                 htmlFor="my-drawer-3"
@@ -105,7 +105,13 @@ const Navbar = () => {
                 </svg>
               </label>
             </div>
-            <div className="">Shelf2Borrow</div>
+            <div className="  ">
+              <img
+                className="w-60 "
+                src="https://i.ibb.co/H4cPk8b/final-Copy.png"
+                alt=""
+              />
+            </div>
 
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal">
