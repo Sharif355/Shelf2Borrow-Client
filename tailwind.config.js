@@ -1,3 +1,6 @@
+
+
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
@@ -8,6 +11,6 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui", "@material-tailwind/react/utils/withMT")],
 }
 

@@ -1,7 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import DarkMode from "../../DarkMode/DarkMode";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        alert("logged out successfully");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
   const links = (
     <>
       <li>
@@ -60,20 +74,6 @@ const Navbar = () => {
           Borrowed
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/login"
-          style={({ isActive, isPending, isTransitioning }) => {
-            return {
-              fontWeight: isActive ? "bold" : "",
-              color: isPending ? "red" : "",
-              viewTransitionName: isTransitioning ? "slide" : "",
-            };
-          }}
-        >
-          Login
-        </NavLink>
-      </li>
     </>
   );
 
@@ -120,6 +120,25 @@ const Navbar = () => {
               </ul>
             </div>
             <DarkMode></DarkMode>
+            {user ? (
+              <div className="flex items-center gap-3 ml-2">
+                <div>
+                  <img
+                    className="w-10 rounded-full"
+                    src={user.photoURL}
+                    alt={user.displayName}
+                  />
+                  <p>{user.displayName}</p>
+                </div>
+                <button onClick={handleLogOut} className="btn normal-case">
+                  LogOut
+                </button>
+              </div>
+            ) : (
+              <button className=" btn normal-case">
+                <Link to="/login">Login</Link>
+              </button>
+            )}
           </div>
           {/* Page content here */}
         </div>
@@ -135,7 +154,6 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      s
     </div>
   );
 };
