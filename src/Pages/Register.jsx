@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../Context/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { registerUser, googleSign } = useContext(AuthContext);
@@ -22,28 +23,69 @@ const Register = () => {
       privacy,
     };
     console.log(newUser);
-    registerUser(email, pass)
-      .then((res) => {
-        console.log(res.user);
-        alert("successfully user created");
-        updateProfile(res.user, {
-          displayName: name,
-          photoURL: photo,
-        });
-      })
-      .catch((error) => {
-        console.log(error.message);
+    if (pass.length < 6) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password must be at least 6 characters long.",
       });
+    } else if (/^(?![A-Z])[^A-Z]*$/.test(pass)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops",
+        text: "Password length should have a Capital letter",
+        confirmButtonText: "Ok",
+      });
+    } else if (/^(?![!@#$%^&*()_+])[\w\d]*$/.test(pass)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops",
+        text: "Password length should have a Special Character",
+        confirmButtonText: "Ok",
+      });
+    } else {
+      registerUser(email, pass)
+        .then((res) => {
+          console.log(res.user);
+          Swal.fire({
+            icon: "success",
+            title: "SignUp completed successfully",
+            confirmButtonText: "Ok",
+          });
+          form.reset();
+          updateProfile(res.user, {
+            displayName: name,
+            photoURL: photo,
+          });
+        })
+        .catch((error) => {
+          console.log(error.message);
+          Swal.fire({
+            icon: "error",
+            title: error.message,
+            confirmButtonText: "Ok",
+          });
+        });
+    }
   };
 
   const handleGoogle = () => {
     googleSign()
       .then((res) => {
         console.log(res.user);
-        alert("user sign in successfully");
+        Swal.fire({
+          title: "Hurrah!",
+          text: "You are logged in Successfully",
+          confirmButtonText: "Ok",
+        });
       })
       .catch((error) => {
         console.log(error.message);
+        Swal.fire({
+          icon: "error",
+          title: error.message,
+          confirmButtonText: "Ok",
+        });
       });
   };
 

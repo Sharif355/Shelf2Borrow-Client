@@ -8,6 +8,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Home from "../Pages/Home/Home";
 import ErrorPage from "../Pages/Error/ErrorPage";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -21,15 +22,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/addBook",
-        element: <AddBook></AddBook>,
+        element: (
+          <PrivateRoutes>
+            <AddBook></AddBook>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/allBooks",
-        element: <AllBooks></AllBooks>,
+        element: (
+          <PrivateRoutes>
+            <AllBooks></AllBooks>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/borrowed",
-        element: <Borrowed></Borrowed>,
+        element: (
+          <PrivateRoutes>
+            <Borrowed></Borrowed>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/login",

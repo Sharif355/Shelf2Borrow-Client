@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import DarkMode from "../../DarkMode/DarkMode";
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -9,7 +10,11 @@ const Navbar = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        alert("logged out successfully");
+        Swal.fire({
+          icon: "success",
+          title: "Logout completed successfully",
+          confirmButtonText: "Ok",
+        });
       })
       .catch((error) => {
         alert(error.message);

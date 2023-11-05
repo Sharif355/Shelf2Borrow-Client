@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../Context/AuthProvider";
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { signIn, googleSign } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,10 +21,21 @@ const Login = () => {
     signIn(email, pass)
       .then((res) => {
         console.log(res.user);
-        alert("successfully user signed");
+        Swal.fire({
+          title: "Hurrah!",
+          text: "You are logged in Successfully",
+          confirmButtonText: "Ok",
+        });
+        form.reset();
+        navigate(location?.state ? location?.state : "/");
       })
       .catch((error) => {
         console.log(error.message);
+        Swal.fire({
+          icon: "error",
+          title: error.message,
+          confirmButtonText: "Ok",
+        });
       });
   };
 
@@ -28,10 +43,19 @@ const Login = () => {
     googleSign()
       .then((res) => {
         console.log(res.user);
-        alert("user sign in successfully");
+        Swal.fire({
+          title: "Hurrah!",
+          text: "You are logged in Successfully",
+          confirmButtonText: "Ok",
+        });
       })
       .catch((error) => {
         console.log(error.message);
+        Swal.fire({
+          icon: "error",
+          title: error.message,
+          confirmButtonText: "Ok",
+        });
       });
   };
 
