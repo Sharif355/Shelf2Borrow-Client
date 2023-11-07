@@ -9,6 +9,8 @@ import Register from "../Pages/Register";
 import Home from "../Pages/Home/Home";
 import ErrorPage from "../Pages/Error/ErrorPage";
 import PrivateRoutes from "./PrivateRoutes";
+import Books from "../Pages/Home/Books";
+import BooksDetails from "../Pages/Home/BooksDetails";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,23 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
+      {
+        path: "/categories/:category",
+        element: (
+          <PrivateRoutes>
+            <Books></Books>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(` http://localhost:5000/categories/${params.category}`),
+      },
+      {
+        path: "/books/:id",
+        element: <BooksDetails></BooksDetails>,
+        loader: ({ params }) =>
+          fetch(` http://localhost:5000/categories/${params.id}`),
+      },
+
       {
         path: "/addBook",
         element: (
@@ -35,6 +54,8 @@ const router = createBrowserRouter([
             <AllBooks></AllBooks>
           </PrivateRoutes>
         ),
+        loader: ({ params }) =>
+          fetch(` http://localhost:5000/categories/${params.category}`),
       },
       {
         path: "/borrowed",

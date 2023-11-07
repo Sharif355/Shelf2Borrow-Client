@@ -11,6 +11,6 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require("daisyui", "@material-tailwind/react/utils/withMT")],
+  plugins: [require("daisyui", "@material-tailwind/react/utils/withMT", "flowbite/plugin")],
 }
 
