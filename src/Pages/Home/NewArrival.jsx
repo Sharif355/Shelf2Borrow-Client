@@ -71,7 +71,7 @@ const NewArrival = () => {
         <div data-aos="fade-up">
           {loadData?.map((data) => (
             <SwiperSlide className="max-w-sm" key={data._id}>
-              <Card className="mt-6 w-96 h-[480px] dark:bg-black">
+              <Card className="mt-6 w-72 md:w-96 h-[480px] dark:bg-black">
                 <CardHeader color="blue-gray" className="relative h-56">
                   <img src={data.image} alt={data.name} loading="lazy" />
                 </CardHeader>

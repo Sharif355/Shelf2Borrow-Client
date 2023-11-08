@@ -32,7 +32,7 @@ const Banner = () => {
       >
         {/* slide1 */}
         <SwiperSlide>
-          <div className="flex justify-between ">
+          <div className="flex flex-col md:flex-row justify-between ">
             <div className="flex flex-col justify-center items-center my-5 w-full space-y-5">
               <p className="p-2  font-medium border uppercase bg-[#F8F9FA] dark:bg-black">
                 VAST ONLINE BOOKS
@@ -53,7 +53,7 @@ const Banner = () => {
         </SwiperSlide>
         {/* slide2 */}
         <SwiperSlide>
-          <div className="flex justify-between bg-[]">
+          <div className="flex flex-col md:flex-row justify-between bg-[]">
             <div className="flex flex-col justify-center items-center my-5 space-y-5 ">
               <p className="p-2  font-medium border uppercase bg-[#F8F9FA] dark:bg-black">
                 EMBED PDF FEATURE
@@ -74,7 +74,7 @@ const Banner = () => {
         </SwiperSlide>
         {/* slide3 */}
         <SwiperSlide>
-          <div className="flex justify-between">
+          <div className="flex flex-col md:flex-row justify-between">
             <div className="flex flex-col justify-center items-center my-5 space-y-5">
               <p className="p-2  font-medium border uppercase bg-[#F8F9FA] dark:bg-black">
                 LARGEST CATALOG

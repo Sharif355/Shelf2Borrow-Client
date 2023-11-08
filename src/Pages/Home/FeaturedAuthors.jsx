@@ -38,7 +38,7 @@ const FeaturedAuthors = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 ">
         {loadData?.map((data) => (
-          <Card key={data._id} className="w-96">
+          <Card key={data._id} className="w-72 md:w-96">
             <CardHeader floated={false} className="h-80">
               <img src={data.image} alt={data.name} />
             </CardHeader>
