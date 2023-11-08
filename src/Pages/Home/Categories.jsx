@@ -6,6 +6,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
@@ -21,8 +23,13 @@ const Categories = () => {
         console.log(error.message);
       });
   }, []);
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
   return (
-    <div>
+    <div data-aos="fade-up">
       <h1 className="text-2xl font-bold">Featured Categories</h1>
       <Swiper
         breakpoints={{

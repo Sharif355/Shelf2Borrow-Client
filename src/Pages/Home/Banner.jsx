@@ -5,10 +5,19 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 import { Autoplay, FreeMode, Pagination } from "swiper/modules";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Banner = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
   return (
-    <div className="mb-20">
+    <div className="mb-20 " data-aos="fade-up">
       <Swiper
         pagination={{
           clickable: true,

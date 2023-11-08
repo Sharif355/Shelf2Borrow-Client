@@ -8,6 +8,8 @@ import {
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaFacebook, FaInstagram, FaTwitter, FaTwitch } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FeaturedAuthors = () => {
   const [loadData, setLoadData] = useState([]);
@@ -17,8 +19,14 @@ const FeaturedAuthors = () => {
     });
   }, []);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
   return (
-    <div className="my-10">
+    <div className="my-10" data-aos="fade-up">
       <div className="flex flex-col justify-center items-center my-5">
         <p className="p-2  font-medium border uppercase bg-[#F8F9FA] dark:bg-black">
           THIS MONT&apos;S

@@ -3,6 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../Context/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { registerUser, googleSign } = useContext(AuthContext);
@@ -91,6 +92,9 @@ const Register = () => {
 
   return (
     <div className="flex justify-center my-16">
+      <Helmet>
+        <title> Shelf2Borrow ||Register</title>
+      </Helmet>
       <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
         <div className="relative grid mx-4 mb-4 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl bg-black">
           <h3 className="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
