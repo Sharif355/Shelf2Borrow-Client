@@ -30,11 +30,13 @@ const BooksDetails = () => {
 
   const handleBorrow = (returnDate) => {
     const borrowedData = {
-      bookId: findData._id,
+      findData,
       returnDate: returnDate,
-      useEmail: user.email,
+      email: user.email,
+      userName: user.displayName,
     };
-    axios.post("http://localhost:5000/borrowed", borrowedData).then(() => {
+    console.log(borrowedData);
+    axios.post("http://localhost:5000/borrowedBooks", borrowedData).then(() => {
       Swal.fire({
         icon: "success",
         title: "Success",
