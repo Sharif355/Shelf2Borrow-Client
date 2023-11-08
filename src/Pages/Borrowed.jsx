@@ -9,7 +9,9 @@ const Borrowed = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/borrowedBooks?email=${user.email}`)
+    fetch(
+      `     https://library-management-server-k3pz7vyws-sharif355.vercel.app/borrowedBooks?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setBorrowedBooks(data);
@@ -17,17 +19,21 @@ const Borrowed = () => {
   }, []);
 
   const handleDelete = (_id) => {
-    axios.delete(`http://localhost:5000/borrowedBooks/${_id}`).then((res) => {
-      if (res.data.deletedCount) {
-        Swal.fire({
-          icon: "success",
-          title: "Success",
-          text: "Book returned successfully",
-        });
-        const remaining = borrowedBooks.filter((book) => book._id !== _id);
-        setBorrowedBooks(remaining);
-      }
-    });
+    axios
+      .delete(
+        `     https://library-management-server-k3pz7vyws-sharif355.vercel.app/borrowedBooks/${_id}`
+      )
+      .then((res) => {
+        if (res.data.deletedCount) {
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Book returned successfully",
+          });
+          const remaining = borrowedBooks.filter((book) => book._id !== _id);
+          setBorrowedBooks(remaining);
+        }
+      });
   };
 
   return (

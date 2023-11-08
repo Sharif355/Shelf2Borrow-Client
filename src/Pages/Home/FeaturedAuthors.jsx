@@ -14,9 +14,13 @@ import "aos/dist/aos.css";
 const FeaturedAuthors = () => {
   const [loadData, setLoadData] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/featuredAuthors").then((res) => {
-      setLoadData(res.data);
-    });
+    axios
+      .get(
+        "     https://library-management-server-k3pz7vyws-sharif355.vercel.app/featuredAuthors"
+      )
+      .then((res) => {
+        setLoadData(res.data);
+      });
   }, []);
 
   useEffect(() => {

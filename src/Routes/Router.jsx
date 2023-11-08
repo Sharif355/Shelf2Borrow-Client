@@ -31,19 +31,25 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(` http://localhost:5000/categories/${params.category}`),
+          fetch(
+            `      https://library-management-server-k3pz7vyws-sharif355.vercel.app/categories/${params.category}`
+          ),
       },
       {
         path: "/books/:id",
         element: <BooksDetails></BooksDetails>,
         loader: ({ params }) =>
-          fetch(` http://localhost:5000/categories/${params.id}`),
+          fetch(
+            `      https://library-management-server-k3pz7vyws-sharif355.vercel.app/categories/${params.id}`
+          ),
       },
       {
         path: "/update/:id",
         element: <UpdateBooks></UpdateBooks>,
         loader: ({ params }) =>
-          fetch(` http://localhost:5000/categories/${params.id}`),
+          fetch(
+            `      https://library-management-server-k3pz7vyws-sharif355.vercel.app/categories/${params.id}`
+          ),
       },
 
       {
@@ -62,7 +68,9 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(` http://localhost:5000/categories/${params.category}`),
+          fetch(
+            `      https://library-management-server-k3pz7vyws-sharif355.vercel.app/categories/${params.category}`
+          ),
       },
       {
         path: "/borrowed",

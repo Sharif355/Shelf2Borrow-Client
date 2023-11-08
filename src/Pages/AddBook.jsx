@@ -24,7 +24,10 @@ const AddBook = () => {
     };
     console.log(updatedData);
     axios
-      .post(`http://localhost:5000/categories/`, updatedData)
+      .post(
+        `     https://library-management-server-k3pz7vyws-sharif355.vercel.app/categories/`,
+        updatedData
+      )
       .then(() => {
         Swal.fire({
           title: "Success",

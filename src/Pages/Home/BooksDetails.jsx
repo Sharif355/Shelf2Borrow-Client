@@ -36,19 +36,24 @@ const BooksDetails = () => {
       userName: user.displayName,
     };
     console.log(borrowedData);
-    axios.post("http://localhost:5000/borrowedBooks", borrowedData).then(() => {
-      Swal.fire({
-        icon: "success",
-        title: "Success",
-        text: "Book Borrowed Successfully",
-      }).catch((err) => {
+    axios
+      .post(
+        "     https://library-management-server-k3pz7vyws-sharif355.vercel.app/borrowedBooks",
+        borrowedData
+      )
+      .then(() => {
         Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: err.message,
+          icon: "success",
+          title: "Success",
+          text: "Book Borrowed Successfully",
+        }).catch((err) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: err.message,
+          });
         });
       });
-    });
   };
 
   return (

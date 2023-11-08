@@ -15,7 +15,9 @@ const Categories = () => {
   const [loadedData, setLoadedData] = useState([]);
   useEffect(() => {
     axios
-      .get(" http://localhost:5000/categories")
+      .get(
+        "      https://library-management-server-k3pz7vyws-sharif355.vercel.app/categories"
+      )
       .then((response) => {
         setLoadedData(response.data);
       })

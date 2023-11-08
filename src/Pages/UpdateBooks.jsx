@@ -31,7 +31,10 @@ const UpdateBooks = () => {
       short_description,
     };
     axios
-      .put(`http://localhost:5000/books/${id}`, updatedData)
+      .put(
+        `     https://library-management-server-k3pz7vyws-sharif355.vercel.app/books/${id}`,
+        updatedData
+      )
       .then(() => {
         Swal.fire({
           title: "Success",
