@@ -13,7 +13,7 @@ const NewArrival = () => {
   useEffect(() => {
     axios
       .get(
-        "     https://library-management-server-6rrm5oaaq-sharif355.vercel.app/newArrivals"
+        "     https://library-management-server-gofj7u1e2-sharif355.vercel.app/newArrivals"
       )
       .then((res) => {
         setLoadData(res.data);
