@@ -16,7 +16,7 @@ const Categories = () => {
   useEffect(() => {
     axios
       .get(
-        "      https://library-management-server-k3pz7vyws-sharif355.vercel.app/categories"
+        "      https://library-management-server-6rrm5oaaq-sharif355.vercel.app/categories"
       )
       .then((response) => {
         setLoadedData(response.data);

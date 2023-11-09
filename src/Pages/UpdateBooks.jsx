@@ -4,12 +4,11 @@ import Swal from "sweetalert2";
 
 const UpdateBooks = () => {
   const { id } = useParams();
-  console.log(id);
+
   const loadedData = useLoaderData();
   const dataArray = Object.values(loadedData);
 
   const findData = dataArray.find((data) => data._id == id);
-  console.log(findData);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +31,7 @@ const UpdateBooks = () => {
     };
     axios
       .put(
-        `     https://library-management-server-k3pz7vyws-sharif355.vercel.app/books/${id}`,
+        `     https://library-management-server-6rrm5oaaq-sharif355.vercel.app/books/${id}`,
         updatedData
       )
       .then(() => {
