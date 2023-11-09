@@ -16,7 +16,7 @@ const FeaturedAuthors = () => {
   useEffect(() => {
     axios
       .get(
-        "     https://library-management-server-gofj7u1e2-sharif355.vercel.app/featuredAuthors"
+        "      https://library-management-server-fu7b5hy3i-sharif355.vercel.app/featuredAuthors"
       )
       .then((res) => {
         setLoadData(res.data);

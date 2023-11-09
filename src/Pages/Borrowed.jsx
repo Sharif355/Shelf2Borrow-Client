@@ -10,7 +10,7 @@ const Borrowed = () => {
 
   useEffect(() => {
     fetch(
-      `     https://library-management-server-gofj7u1e2-sharif355.vercel.app/borrowedBooks?email=${user.email}`
+      `      https://library-management-server-fu7b5hy3i-sharif355.vercel.app/borrowedBooks?email=${user.email}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -21,7 +21,7 @@ const Borrowed = () => {
   const handleDelete = (_id) => {
     axios
       .delete(
-        `     https://library-management-server-gofj7u1e2-sharif355.vercel.app/borrowedBooks/${_id}`
+        `      https://library-management-server-fu7b5hy3i-sharif355.vercel.app/borrowedBooks/${_id}`
       )
       .then((res) => {
         if (res.data.deletedCount) {

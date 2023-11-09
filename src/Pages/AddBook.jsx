@@ -25,7 +25,7 @@ const AddBook = () => {
 
     axios
       .post(
-        " https://library-management-server-gofj7u1e2-sharif355.vercel.app/categories/",
+        "  https://library-management-server-fu7b5hy3i-sharif355.vercel.app/categories/",
         updatedData
       )
       .then(() => {
