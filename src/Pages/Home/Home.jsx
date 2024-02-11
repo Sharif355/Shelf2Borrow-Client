@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import Categories from "./Categories";
 import FeaturedAuthors from "./FeaturedAuthors";
 import NewArrival from "./NewArrival";
+import Blog from "./Blog";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Categories></Categories>
       <NewArrival></NewArrival>
       <FeaturedAuthors></FeaturedAuthors>
+      <Blog></Blog>
     </div>
   );
 };

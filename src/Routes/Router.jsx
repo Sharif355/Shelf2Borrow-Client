@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `       https://library-management-server-fu7b5hy3i-sharif355.vercel.app/categories/${params.category}`
+            `          https://library-management-server-enennbyw6-sharif355.vercel.app/categories/${params.category}`
           ),
       },
       {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         element: <BooksDetails></BooksDetails>,
         loader: ({ params }) =>
           fetch(
-            `       https://library-management-server-fu7b5hy3i-sharif355.vercel.app/categories/${params.id}`
+            `          https://library-management-server-enennbyw6-sharif355.vercel.app/categories/${params.id}`
           ),
       },
       {
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         element: <UpdateBooks></UpdateBooks>,
         loader: ({ params }) =>
           fetch(
-            `       https://library-management-server-fu7b5hy3i-sharif355.vercel.app/categories/${params.id}`
+            `          https://library-management-server-enennbyw6-sharif355.vercel.app/categories/${params.id}`
           ),
       },
 
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `       https://library-management-server-fu7b5hy3i-sharif355.vercel.app/categories/${params.category}`
+            `          https://library-management-server-enennbyw6-sharif355.vercel.app/categories/${params.category}`
           ),
       },
       {

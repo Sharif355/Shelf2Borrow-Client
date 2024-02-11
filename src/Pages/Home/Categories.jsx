@@ -16,7 +16,7 @@ const Categories = () => {
   useEffect(() => {
     axios
       .get(
-        "       https://library-management-server-fu7b5hy3i-sharif355.vercel.app/categories"
+        "          https://library-management-server-enennbyw6-sharif355.vercel.app/categories"
       )
       .then((response) => {
         setLoadedData(response.data);
@@ -35,8 +35,8 @@ const Categories = () => {
       <h1 className="text-2xl font-bold">Featured Categories</h1>
       <Swiper
         breakpoints={{
-          340: {
-            slidesPerView: 2,
+          320: {
+            slidesPerView: 1,
             spaceBetween: 15,
           },
           700: {
