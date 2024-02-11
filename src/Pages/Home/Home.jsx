@@ -4,6 +4,7 @@ import Categories from "./Categories";
 import FeaturedAuthors from "./FeaturedAuthors";
 import NewArrival from "./NewArrival";
 import Blog from "./Blog";
+import NewsLetter from "./NewsLetter";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <NewArrival></NewArrival>
       <FeaturedAuthors></FeaturedAuthors>
       <Blog></Blog>
+      <NewsLetter></NewsLetter>
     </div>
   );
 };

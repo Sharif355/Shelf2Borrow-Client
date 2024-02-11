@@ -24,7 +24,7 @@ const Blog = () => {
             />
           </Link>
           <Link>
-            <h4 className="font-semibold text-2xl px-5 py-3  ">
+            <h4 className="font-semibold text-2xl px-5 py-3 text-black  ">
               Ullamcorper dolor lectus accumsan
             </h4>
           </Link>
@@ -40,7 +40,7 @@ const Blog = () => {
               src="https://i.ibb.co/wJYzXQs/blog8.jpg"
               alt="blog-1"
             />
-            <h4 className="font-semibold text-2xl px-5 py-3  ">
+            <h4 className="font-semibold text-2xl px-5 py-3 text-black ">
               Rutrum sit vestibulum quisque velit.
             </h4>
           </Link>
@@ -56,7 +56,7 @@ const Blog = () => {
               src="https://i.ibb.co/CV8FQJ5/blog7.jpg"
               alt="blog-1"
             />
-            <h4 className="font-semibold text-2xl px-5 py-3  ">
+            <h4 className="font-semibold text-2xl px-5 py-3 text-black  ">
               Sed elit sed dolor nulla volutpat .
             </h4>
           </Link>
